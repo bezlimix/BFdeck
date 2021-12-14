@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="rxtx">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/rxtx-development/rxtx-api/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/rxtx-development/rxtx-api/src/test/java" />
+      <root url="file://$USER_HOME$/Downloads/rxtx-development/rxtxSerial-java/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

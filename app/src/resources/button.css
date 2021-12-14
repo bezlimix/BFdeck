@@ -1,0 +1,75 @@
+
+.button1{
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #324570FF 0%, #324570FF 100%),
+            #324570FF,
+            #324570FF,aaa
+            radial-gradient(center 50% 50%, radius 100%, #324570FF, #324570FF);
+}
+
+.toggle-button {
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #757575 0%, #757575 100%),
+            #757575,
+            #757575,aaa
+            radial-gradient(center 50% 50%, radius 100%, #757575, #757575);
+}
+
+.toggle-button:hover {
+    -fx-background-color:#a4a4a4;
+    sh: inset 0 1px 3px rgba(0, 10, 20, .5),
+    0 1px rgb(83, 94, 104),
+    0 0 1px rgb(86, 96, 106);
+}
+.toggle-button:selected{
+    -fx-background-color:#494949;
+    sh: inset 0 1px 3px rgba(0, 10, 20, .5),
+    0 1px rgb(83, 94, 104),
+    0 0 1px rgb(86, 96, 106);
+    box-shadow: inset 0 1px 3px rgba(0, 10, 20, .5),
+    0 1px rgb(83, 94, 104),
+    0 0 1px rgb(86, 96, 106);
+}
+
+#button1_field{
+
+}
+
+#button2_field{
+
+}
+
+#button3_field{
+
+}
+
+#button4_field{
+
+}
+
+#button5_field{
+
+}
+
+#button6_field{
+
+}
+
+#ok {
+    -fx-background-radius: 4;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #c1c0c0 0%, #c1c0c0 100%),
+            #c1c0c0,
+            #c1c0c0,aaa
+            radial-gradient(center 50% 50%, radius 100%, #c1c0c0, #c1c0c0);
+
+}
+#ok:hover{
+    -fx-background-color: #CBC3C3FF;
+}
+#ok:pressed{
+    -fx-background-color: linear-gradient(rgb(105, 105, 145), rgb(105, 122, 140)) rgb(78, 93, 129);
+}
+

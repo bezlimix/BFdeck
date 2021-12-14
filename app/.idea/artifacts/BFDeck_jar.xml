@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BFDeck:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BFDeck_jar</output-path>
+    <root id="archive" name="BFDeck.jar">
+      <element id="module-output" name="BFDeck" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jSSC-2.8.0-Release/jssc.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
