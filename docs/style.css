@@ -1,0 +1,444 @@
+/*@keyframes show{*/
+/*    0%{*/
+/*        opacity:0;*/
+/*    }*/
+/*    100% {*/
+/*        opacity:1;*/
+/*    }*/
+/*}*/
+body{
+    margin: 0;
+    padding: 0;
+    background: url("1920x1080_stars-glare-black-space.jpeg");
+    /*font-family: "American Typewriter";*/
+
+    /*opacity:0; !*Элемент полностью прозрачный (невидимый)*!*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 5s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.5s; /* Задержка перед началом */
+    color:white;
+}
+header{
+    background: none;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.button-support{
+    border:0;
+    background: none;
+    transition-duration: 0.3s;
+}
+.link-support{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+
+}
+
+.button-support:hover{
+    /*border-bottom: white     2px solid;*/
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.nav-bar{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+.github-button{
+    border:0;
+    background: none;
+    transition-duration: 0.3s;
+}
+.link-github{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+
+}
+.github-button:hover{
+
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.logo-picture{
+    height: 75px;
+    width: 150px;
+}
+.button-downloads{
+    border:0;
+    background: none;
+    transition-duration: 0.3s;
+}
+.link-downloads{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+
+}
+.button-downloads:hover{
+
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.img-main-info{
+    height: 350px;
+    margin: 20px 10px 10px 80px;
+}
+.main-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-main-info{
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+.hot-keys{
+    display: flex;
+    margin: 0 5vh 0 5vh;
+}
+.hot-keys-text{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hot-keys-button {
+    border: 1px white solid;
+    background: none;
+    color: white;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+
+}
+.hot-keys-img{
+    height: 20vh;
+}
+.link-hot-keys{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.hot-keys-button:hover {
+    border: 1px black solid;
+    background: white;
+    color: black;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+    transition: 0.3s all;
+}
+.hot-keys-button:hover > a{
+    color: black;
+}
+.link-hot-keys:hover{
+    color: black;
+}
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10vh 0 10vh;
+}
+.appImg{
+
+    width: 50vh;
+}
+.appText{
+    font-size: 24px;
+    margin-left: 10vh;
+}
+.appInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.appButton{
+    border: 1px white solid;
+    background: none;
+    color: white;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+
+}
+.appButton-main{
+    border: 1px white solid;
+    background: none;
+    color: white;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+    margin: 0 0 0 35vh;
+}
+.appButton-main:hover{
+    border: 1px black solid;
+    background: white;
+    color: black;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+    transition: 0.3s all;
+}
+.linkApp{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.appButton:hover {
+    border: 1px black solid;
+    background: white;
+    color: black;
+    height: 10vh;
+    width: 20vh;
+    border-radius: 30px;
+    transition: 0.3s all;
+}
+.appButton:hover > a{
+    color: black;
+}
+.appButton-main:hover > a{
+    color: black;
+}
+.linkApp:hover{
+    color: black;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    min-height: 15vh;
+    font-size: 18px;
+    border: 1px solid white;
+}
+.background-footer{
+    width: 100%;
+    height: 100%;
+    background: #403939;
+    opacity: 0.5;
+}
+footer > * {
+    width: 30%;
+    opacity: 0.8;
+
+}
+.navigation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center ;
+}
+.navigation > a{
+    text-decoration: none;
+    color: white;
+}
+.choose-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 10vh 0 10vh 0;
+}
+.choose-blocks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.block-order{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    margin: 5vh 0 5vh 0;
+}
+.button-order-block{
+    border-radius: 30px;
+    border: 1px solid white;
+    background: none;
+    height: 20vh;
+    width: 20vh;
+}
+.button-order-block > a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.button-order-block:hover{
+    background: white;
+    transition: 0.3s all;
+}
+.button-order-block:hover > a{
+    color: black;
+    transition: 0.3s all;
+}
+.img-block{
+    height: 20vh;
+    width: 20vh;
+}
+.block-info{
+    font-size: 24px;
+}
+.text-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 5vh 0 5vh 0;
+}
+.button-order-information{
+    border-radius: 24px;
+    height: 5vh;
+    width: 5vh;
+    border: 1px white solid;
+    background: white;
+    color: black;
+    font-size: 18px;
+    margin-right: 3vh;
+}
+.order-page > span{
+    font-size: 24px;
+}
+.choose-delivery{
+    width: 20vh;
+    height: 10vh;
+}
+.order-page{
+    margin: 0 0 0 35%;
+}
+.choose-transport{
+    margin: 3vh;
+    display: flex;
+
+}
+.choose-transport > div{
+    margin-right: 5px;
+    border-radius: 24px;
+    border: white 1px solid;
+    display: flex;
+    align-items: center;
+}
+.choose-transport > div > a{
+    margin-left: 4vh;
+    text-decoration:none;
+    color: white;
+    font-size: 18px;
+}
+.choose-delivery:hover > a{
+    color: black;
+    transition: all 0.3s ease;
+}
+.choose-transport > div:hover{
+    background: white;
+    transition: all 0.3s ease;
+}
+.button-clicked {
+    background: #b645c3;
+    color: black;
+    transition: 0.3s all ease;
+}
+.city{
+    display: flex;
+}
+.input-city{
+    width: 50vh;
+    height: 5vh;
+    border: 1px solid black;
+    margin-top: 5px;
+    font-size: 24px;
+}
+.street{
+    margin: 3vh 3vh 0 0;
+}
+.input-street{
+    width: 50vh;
+    height: 5vh;
+    border: 1px solid black;
+    margin-top: 5px;
+    font-size: 24px;
+}
+.address{
+    display: flex;
+    flex-direction: row;
+}
+.house{
+    margin: 3vh 3vh 0 0;
+}
+.input-house {
+    width: 5vh;
+    height: 5vh;
+    border: 1px solid black;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.input-flat{
+    width: 6vh;
+    height: 5vh;
+    border: 1px solid black;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.more-info-block{
+    margin-top: 3vh;
+
+}
+.more-info-block > textarea{
+    min-width: 50vh;
+    min-height: 20vh;
+    font-size: 24px;
+    padding: 10px;
+}
+.phone{
+    width: 53vh;
+    height: 3vh;
+    font-size: 18px;
+    border: none;
+}
+.phone-number-block{
+    margin: 3vh 3vh 3vh 0;
+}
+.approve-order{
+    border: white 1px solid;
+    background: none;
+    border-radius: 24px;
+    height: 10vh;
+    width: 20vh;
+    margin: 0 0 5vh 15vh    ;
+    box-shadow: white;
+}
+.approve-order > a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.approve-order:hover{
+    background: white;
+    transition: 0.3s all ease;
+}
+.approve-order:hover > a{
+    color: black;
+
+    transition: 0.3s all ease;
+}
+input{
+    border-radius: 5px;
+}
+textarea{
+    border-radius: 5px;
+}
