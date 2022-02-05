@@ -1,34 +1,27 @@
-#include <GyverButton.h>
-#include <Keyboard.h>
-GButton but1(2);
-GButton but2(3);
-GButton but3(4);
-GButton but4(5);
-GButton but5(6);
-GButton but6(7);
 
+int n;
+int a[10000];
+int pref[10000];
 void setup() {
   Serial.begin(9600);
-  but1.setTickMode(300);
-  but2.setTickMode(200);
-  but3.setTickMode(100);
-  but4.setTickMode(100);
-  but5.setTickMode(AUTO);
-  but6.setTickMode(AUTO); 
+}
+void precalc() {
+    pref[0] = a[0];
+    for (int i = 1; i < n; i++) {
+        pref[i] = pref[i - 1] ^ a[i];
+    }
+}
+
+long long query(int l, int r) {
+    if (l > 0) {
+        return pref[r] ^ pref[l - 1];
+    } else {
+        return pref[r];
+    }
 }
 void loop() {
-  if (but1.isClick()) {Serial.println("clk1"); keyboard.press('F13');  
-  };
-  if (but2.isClick()) {Serial.println("clk2"); keyboard.press('F14'); 
-  };
-  if (but3.isClick()) {Serial.println("clk3"); keyboard.press('F15');
-  };
-  if (but4.isClick()) {Serial.println("clk4"); keyboard.press('F16');
-  };  
-  if (but5.isClick()) {Serial.println("clk5"); keyboard.press('F17');
-  };
-  if (but6.isClick()) {Serial.println("clk6"); keyboard.press('F18');
-  };
   
- }
+for(long x = 999999;x<2147483647;x++){
+  Serial.println(x*x);
+}}
  

@@ -1,6 +1,7 @@
 #include <GyverButton.h>
 #include <microLED.h>
 #include "Parser.h"
+#include <EEPROM.h>
 //=======================КОНФИГУРАЦИЯ=======================//
 #define backlight 1          //наличин подсветки 1-есть,0-нету
 #define wireless 0           //наличие модуля bluetooth 1-есть,0-нету
@@ -15,6 +16,7 @@ GButton but3(4);
 GButton but4(5);
 GButton but5(6);
 GButton but6(7);
+GButton buts[NUM_LEDS] = {but1,but2,but3,but4,but5,but6};
 mData simon_color[4] = { mRed, mYellow, mAqua, mGreen };
 int ints[50];
 int sequence[MAX_LEVEL];
@@ -25,13 +27,12 @@ uint8_t color_set[NUM_LEDS][3];
 microLED<6, A0, MLED_NO_CLOCK, LED_WS2818, ORDER_GRB, CLI_AVER> strip;
 uint32_t lastTime = 0;
 uint16_t periodMs = 10;
-int led_mode = 0;
 int rain = 0;
 uint8_t RGB[3] = { 0, 0, 0 };
 uint8_t changer_color = 0;
 uint8_t bright = 255;
 bool bright_flag = false;
-int rainm[deck_length] = { 0, 150, 300 };
+unsigned char rainm[deck_length] = { 0, 30, 60};
 void setup() {
   Serial.begin(9600);
   but1.setTickMode(AUTO);
@@ -40,11 +41,6 @@ void setup() {
   but4.setTickMode(AUTO);
   but5.setTickMode(AUTO);
   but6.setTickMode(AUTO);
-  for(int i = 0; i < deck_length; i++){
-    int u = 0;
-    rainm[i] = u;
-    u = u + 150;
-  }
 }
 void loop() {
   uint32_t now = millis();
@@ -59,13 +55,13 @@ void loop() {
     Serial.readBytesUntil('\n', buf, 255);
     Parser data(buf, ',');
     data.parseInts(ints);
-   // for (int u = 0; u < 50; u++) {
-   //   Serial.print(ints[u]);
-   //   Serial.print(",");
-   // }
+    for (int u = 0; u < 50; u++) {
+      Serial.print(ints[u]);
+      Serial.print(",");
+    }
     switch (ints[0]) {
       case 0:{
-        led_mode = ints[1];
+        EEPROM.write(0, ints[1]);
         bright_flag = false;
         break;}
       case 1:{
@@ -101,12 +97,12 @@ void loop() {
   };
   if (now - lastTime > periodMs) {
     lastTime = now;
-    switch (led_mode) {
+    switch (EEPROM.read(0)) {
       case 0:
         rainbow();
         break;
       case 1:
-        rainbow2();
+        transfusion();
         break;
       case 2:
         temp();
@@ -152,25 +148,16 @@ void rainbow() {
   }
   strip.show();
 }
-void rainbow2() {
-  strip.set(0, mWheel(rainm[0]));
-  strip.set(3, mWheel(rainm[0]));
-  strip.set(1, mWheel(rainm[1]));
-  strip.set(4, mWheel(rainm[1]));
-  strip.set(2, mWheel(rainm[2]));
-  strip.set(5, mWheel(rainm[2]));
+void transfusion() {
+  strip.set(0, mWheel8(rainm[0]));
+  strip.set(3, mWheel8(rainm[0]));
+  strip.set(1, mWheel8(rainm[1]));
+  strip.set(4, mWheel8(rainm[1]));
+  strip.set(2, mWheel8(rainm[2]));
+  strip.set(5, mWheel8(rainm[2]));
   rainm[0]++;
   rainm[1]++;
   rainm[2]++;
-  if (rainm[0] == 1530) {
-    rainm[0] = 0;
-  }
-  if (rainm[1] == 1530) {
-    rainm[1] = 0;
-  }
-  if (rainm[2] == 1530) {
-    rainm[2] = 0;
-  }
   strip.show();
 }
 void temp() {
@@ -234,7 +221,7 @@ void fill() {
 }
 void Simon_loop() {
   if (but1.isHold() && but4.isHold()) {
-    led_mode = 0;
+    EEPROM.write(0, 0);
     loop();
   }
   if (level == 1) {
@@ -258,7 +245,6 @@ void show_sequence() {
     delay(200);
   }
 }
-
 void get_sequence() {
   int flag = 0;  //this flag indicates if the sequence is correct
 
@@ -324,7 +310,6 @@ void get_sequence() {
   }
   right_sequence();
 }
-
 void generate_sequence() {
   randomSeed(millis());
 
@@ -360,7 +345,6 @@ void wrong_sequence() {
   level = 1;
   velocity = 1000;
 }
-
 void right_sequence() {
   strip.clear();
   for (int i = 0; i < 3; i++) {
